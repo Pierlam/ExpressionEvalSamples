@@ -11,6 +11,9 @@ https://www.nuget.org/packages/Pierlam.ExpressionEval/
 The web site:
 https://pierlam-project.wixsite.com/website 
 
+Contact us:
+Pierlam-Project@outlook.com
+
 ## TestExpressionEvalNetCoreApp
 This an application example, it's a .NET Core console application
 See the code inside this application to have examples of use of the ExpressionEval library.
