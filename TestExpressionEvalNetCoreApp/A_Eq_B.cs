@@ -8,13 +8,21 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Test the expression :
     /// (A=B)
+    /// 
     /// </summary>
     public class A_Eq_B
     {
         /// <summary>
+        /// Expression: (A=B)
+        /// A boolean expression using two variables.
+        /// returns always a boolean value result.
+        /// 
+        /// Particularity:
         /// Execute the same expression 2 times.
         /// The first time, both variables A and B are defined as integer.
         /// The second time, A and B are then defined as boolean.
+        /// 
+        /// The execution finish successfully.
         /// </summary>
         public static void Test_A_Eq_B()
         {
