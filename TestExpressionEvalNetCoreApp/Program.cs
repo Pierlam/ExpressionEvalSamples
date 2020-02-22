@@ -13,9 +13,12 @@ namespace TestExpressionEvalNetCoreApp
     {
         static void Main(string[] args)
         {
-            ExpressionEval expressionEval = new ExpressionEval();
-            
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("--Text the ExpressionEval nuget library:");
+
+            A_Eq_B.Test_A_Eq_B();
+
+            Console.WriteLine("Input a key..");
+            Console.ReadKey();
 
         }
     }
