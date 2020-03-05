@@ -51,7 +51,7 @@ namespace TestExpressionEvalNetCoreApp
         /// operande comparison operator operand expression samples
         /// 
         /// </summary>
-        static void Samples_OP_Operand_Comp_Oprand()
+        static void Samples_OP_Operand_Comp_Operand_CP()
         {
             // (A=12), A=12 ->return true
             OP_Operand_Comp_Operand_CP.A_Eq_12_true();
@@ -76,6 +76,20 @@ namespace TestExpressionEvalNetCoreApp
         }
 
         /// <summary>
+        /// not logical expression.
+        /// 
+        /// </summary>
+        static void Samples_Not()
+        {
+            // Not(A and B): A=true, B=false -> return true
+            Not_Expr.Not_OP_A_and_b_CP_true();
+
+            // Not(A and B): A=true, B=true-> return false
+            Not_Expr.Not_OP_A_and_b_CP_false();
+
+        }
+
+        /// <summary>
         /// wrong expressions samples
         /// </summary>
         static void Samples_WrongExpressions()
@@ -87,11 +101,14 @@ namespace TestExpressionEvalNetCoreApp
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
 
-            // operande comparison operator operand expression samples
-            Samples_Operand_Comp_Oprand();
+            // operand comparison operator operand expression samples
+            //Samples_Operand_Comp_Oprand();
 
-            // operande comparison operator operand expression samples, with open and close parenthesis
-            //Samples_OP_Operand_Comp_Oprand();
+            // operand comparison operator operand expression samples, with open and close parenthesis
+            //Samples_OP_Operand_Comp_Operand_CP();
+
+            // not logical expression
+            Samples_Not();
 
             // wrong expressions samples
             Samples_WrongExpressions();
