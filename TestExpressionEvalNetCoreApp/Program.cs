@@ -81,6 +81,12 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         static void Samples_Not()
         {
+            // Not(A): A=false -> return true
+            Not_Expr.Not_OP_A_CP_true();
+
+            // Not(A): A=true-> return false
+            Not_Expr.Not_OP_A_CP_false();
+            
             // Not(A and B): A=true, B=false -> return true
             Not_Expr.Not_OP_A_and_b_CP_true();
 
@@ -100,12 +106,20 @@ namespace TestExpressionEvalNetCoreApp
         static void Main(string[] args)
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("Version is: 0.2-beta");
+            Console.WriteLine("Changes:");
+            Console.WriteLine("  Bugs fixes on expressions using NOT logical operator.");
+            Console.WriteLine("  ExpressionEval.DefineVariableBool() replaced by ExpressionEval.DefineVarBool()");
+            Console.WriteLine("  ExpressionEval.DefineVariableInt() replaced by ExpressionEval.DefineVarInt()");
+            Console.WriteLine("  ExpressionEval.DefineVariableString() replaced by ExpressionEval.DefineVarString()");
+            Console.WriteLine("  ExpressionEval.DefineVariableDouble() replaced by ExpressionEval.DefineVarDouble()");
+            Console.WriteLine("  Get the bool result of an execution, is now simplier, just use: ExprExecResult.ResultBool, its a boolean value.");
 
             // operand comparison operator operand expression samples
-            //Samples_Operand_Comp_Oprand();
+            Samples_Operand_Comp_Oprand();
 
             // operand comparison operator operand expression samples, with open and close parenthesis
-            //Samples_OP_Operand_Comp_Operand_CP();
+            Samples_OP_Operand_Comp_Operand_CP();
 
             // not logical expression
             Samples_Not();

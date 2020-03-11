@@ -33,15 +33,13 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=12");
-            evaluator.DefineVariableInt("a", 12);
+            evaluator.DefineVarInt("a", 12);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
         /// <summary>
@@ -64,15 +62,13 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=13");
-            evaluator.DefineVariableInt("a", 13);
+            evaluator.DefineVarInt("a", 13);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
         /// <summary>
@@ -95,15 +91,13 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=33");
-            evaluator.DefineVariableInt("a", 33);
+            evaluator.DefineVarInt("a", 33);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
         /// <summary>
@@ -126,15 +120,13 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=15");
-            evaluator.DefineVariableInt("a", 15);
+            evaluator.DefineVarInt("a", 15);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
         /// <summary>
@@ -158,16 +150,14 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=15; B=15 ");
-            evaluator.DefineVariableInt("a", 15);
-            evaluator.DefineVariableInt("b", 15);
+            evaluator.DefineVarInt("a", 15);
+            evaluator.DefineVarInt("b", 15);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
         /// <summary>
@@ -196,16 +186,14 @@ namespace TestExpressionEvalNetCoreApp
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: A=15; B=15 ");
-            evaluator.DefineVariableInt("a", 15);
-            evaluator.DefineVariableInt("b", 15);
+            evaluator.DefineVarInt("a", 15);
+            evaluator.DefineVarInt("b", 15);
 
             //====3/Execute the expression
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            ExprExecValueBool valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
 
             //======================================================
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
@@ -213,17 +201,14 @@ namespace TestExpressionEvalNetCoreApp
 
             Console.WriteLine("\nExecute again the same provided expression but changes variables types and values:");
             Console.WriteLine("Define variables: A=false; B=false");
-            evaluator.DefineVariableBool("a", false);
-            evaluator.DefineVariableBool("b", false);
+            evaluator.DefineVarBool("a", false);
+            evaluator.DefineVarBool("b", false);
 
             //====3/execute l'expression booléenne
             evaluator.Exec();
 
             //====4/get the result, its a bool value
-            valueBool = execResult.ExprExec as ExprExecValueBool;
-
-            Console.WriteLine("Execution Result: " + valueBool.Value.ToString());
-
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
     }
