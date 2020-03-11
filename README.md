@@ -35,6 +35,8 @@ a, b, c, d are variables used in expressions.
 
 After the parse (decode) of the expression, you have to define these variables: define the type and provide a value.
 
+Of course, it's possible to get the list of variables found in the expression.
+
 Possibles types are: bool, int, double and string.
 
 
