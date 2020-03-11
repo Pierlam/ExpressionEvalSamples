@@ -19,18 +19,22 @@ Expressions are provided as a raw string to the library.
 
 Some examples of expressions you can execute:
 (a And b)
+
 (a or b) And (c or d)
+
 NOT(a)
+
 Not a
+
 a=b
 
 (a >= b) and ( c <> d)
 
 a, b, c, d are variables used in expressions.
+
 After the parse (decode) of the expression, you have to define these variables: define the type and provide a value.
+
 Possibles types are: bool, int, double and string.
-
-
 
 
 ## TestExpressionEvalNetCoreApp
