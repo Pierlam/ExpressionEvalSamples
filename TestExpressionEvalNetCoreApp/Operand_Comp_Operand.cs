@@ -26,7 +26,16 @@ namespace TestExpressionEvalNetCoreApp
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
-            Console.WriteLine("Define variables: A=12");
+            // scan all variables found in the expression (found the variable named 'a')
+            int i = 0;
+            foreach (ExprVarUsed exprVar in parseResult.ListExprVarUsed)
+            {
+                i++;
+                Console.WriteLine("Var #" + i + "Name=" + exprVar.Name);
+            }
+
+
+            Console.WriteLine("Define variables: a:=12");
             evaluator.DefineVarInt("a", 12);
 
             //====3/Execute the expression
