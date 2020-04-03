@@ -53,7 +53,9 @@ Change the decimal separator of double, is the dot by default but can be set to 
 
 ## Roadmap
 
--Add the ability to use function call
+Some future evolutions are planned in the pipe:
+
+-Add the ability to use function call in expression (soon)
 
 exp: Myfct(),  MyOtherFct(a),  AnotherOneFct(a, 12)
 
