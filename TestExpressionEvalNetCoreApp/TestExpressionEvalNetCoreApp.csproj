@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pierlam.ExpressionEval" Version="0.2.0-beta" />
+    <PackageReference Include="Pierlam.ExpressionEval" Version="0.3.0" />
   </ItemGroup>
 
 </Project>

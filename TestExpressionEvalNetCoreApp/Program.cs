@@ -8,6 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// .NET Core.
     /// Use the netstandard2.0 version.
     /// 
+    /// Use the version 0.3 of the ExpressionEval library from nuget.
     /// </summary>
     class Program
     {
@@ -148,13 +149,28 @@ namespace TestExpressionEvalNetCoreApp
             
             // Not(A): A:=12-> error, the variable should be a boolean 
             // -->an exception occurs, need a fix and a new version.
-            //Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
+            Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
+        }
+
+        /// <summary>
+        /// expressions with double number
+        /// exp: 12.34  123E6
+        /// 
+        /// </summary>
+        static void Exec_Samples_UseNumber()
+        {
+            // a=12.34:  a:=12.34, return true
+            Samples_UseNumber.a_Eq_12dot34_true();
+
+            // a=123E5:  a:=123E5, return true
+            Samples_UseNumber.a_Eq_123E5_true();
+
         }
 
         static void Main(string[] args)
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
-            Console.WriteLine("Version is: 0.2-beta");
+            Console.WriteLine("Version is: 0.3");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Bugs fixes on expressions using NOT logical operator.");
             Console.WriteLine("  ExpressionEval.DefineVariableBool() replaced by ExpressionEval.DefineVarBool()");
@@ -181,6 +197,8 @@ namespace TestExpressionEvalNetCoreApp
             // Expressions with variables well built but variables bad defined (type or/and value).
             Samples_WrongVariables();
 
+            // expressions with double number
+            Exec_Samples_UseNumber();
 
             Console.WriteLine("Input a key..");
             Console.ReadKey();

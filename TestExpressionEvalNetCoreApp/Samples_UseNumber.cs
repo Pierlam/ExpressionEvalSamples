@@ -6,13 +6,13 @@ using System.Text;
 namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
-    /// Expressions with variables well built but variables bad defined (type or/and value).
+    /// Samples of logical expressions using or/and.
     /// </summary>
-    public class Samples_ExprOkVarError
+    public class Samples_UseNumber
     {
-        public static void Not_OP_A_CP_Var_a_NotDefined_Err()
+        public static void a_Eq_12dot34_true()
         {
-            string expr = "Not(A)";
+            string expr = "a=12.34";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
@@ -23,29 +23,18 @@ namespace TestExpressionEvalNetCoreApp
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
-            //Console.WriteLine("Define variables: A=12");
-            //evaluator.DefineVarInt("a", 12);
+            Console.WriteLine("Define variables: a:=12.34");
+            evaluator.DefineVarDouble("a", 12.34);
 
             //====3/Execute the expression
             evaluator.Exec();
-
-            if(execResult.HasError)
-            {
-                // error: VariableNotCreated
-                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].ErrCode);
-
-                // Key: VarName, Value: a
-                Console.WriteLine("Execution Result failed, ParamKey: " + execResult.ListError[0].ListErrorParam[0].Key + ", ParamValue: " + execResult.ListError[0].ListErrorParam[0].Value);
-                return;
-            }
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
-
-        public static void Not_OP_A_CP_A_Int_Err()
+        public static void a_Eq_123E5_true()
         {
-            string expr = "Not(A)";
+            string expr = "a=123E5";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
@@ -56,21 +45,11 @@ namespace TestExpressionEvalNetCoreApp
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             ExprExecResult execResult = evaluator.InitExec(parseResult);
 
-            Console.WriteLine("Define variables: A=12");
-            evaluator.DefineVarInt("a", 12);
+            Console.WriteLine("Define variables: a:=123E5");
+            evaluator.DefineVarDouble("a", 123E5);
 
             //====3/Execute the expression
             evaluator.Exec();
-
-            if (execResult.HasError)
-            {
-                // error: VariableNotCreated
-                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].ErrCode);
-
-                // Key: VarName, Value: a
-                Console.WriteLine("Execution Result failed, ParamKey: " + execResult.ListError[0].ListErrorParam[0].Key + ", ParamValue: " + execResult.ListError[0].ListErrorParam[0].Value);
-                return;
-            }
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
