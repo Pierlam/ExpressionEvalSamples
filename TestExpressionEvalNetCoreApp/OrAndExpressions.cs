@@ -21,14 +21,12 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=false, b=true");
             evaluator.DefineVarBool("a", false);
             evaluator.DefineVarBool("b", true);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -45,14 +43,12 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=false, b=false");
             evaluator.DefineVarBool("a", false);
             evaluator.DefineVarBool("b", false);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -69,14 +65,12 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=true, b=true");
             evaluator.DefineVarBool("a", true);
             evaluator.DefineVarBool("b", true);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -93,14 +87,12 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=false, b=true");
             evaluator.DefineVarBool("a", false);
             evaluator.DefineVarBool("b", true);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -114,20 +106,18 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             // set the tool in french
-            evaluator.SetLang(ExpressionEvalDef.Lang.Fr);
+            evaluator.SetLang(Language.Fr);
 
             //====1/decode the expression
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=false, b=true");
             evaluator.DefineVarBool("a", false);
             evaluator.DefineVarBool("b", true);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);

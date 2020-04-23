@@ -167,7 +167,7 @@ namespace TestExpressionEvalNetCoreApp
 
         }
 
-        static void Main(string[] args)
+        static void ShowInfos_v0_3()
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.3");
@@ -178,6 +178,23 @@ namespace TestExpressionEvalNetCoreApp
             Console.WriteLine("  ExpressionEval.DefineVariableString() replaced by ExpressionEval.DefineVarString()");
             Console.WriteLine("  ExpressionEval.DefineVariableDouble() replaced by ExpressionEval.DefineVarDouble()");
             Console.WriteLine("  Get the bool result of an execution, is now simplier, just use: ExprExecResult.ResultBool, its a boolean value.");
+        }
+
+        static void ShowInfos_v0_4()
+        {
+            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("Version is: 0.4");
+            Console.WriteLine("Changes:");
+            Console.WriteLine("  Simplifcation to use the component: InitExec() removed.");
+            Console.WriteLine("  Now possible to use function cal in expression, with any or one parameter.");
+            Console.WriteLine("  functionCall: return type: bool, int , string and double managed");
+            Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
+        }
+
+        static void Main(string[] args)
+        {
+            //ShowInfos_v0_3();
+            ShowInfos_v0_4();
 
             // operand comparison operator operand expression samples
             Samples_Operand_Comp_Oprand();

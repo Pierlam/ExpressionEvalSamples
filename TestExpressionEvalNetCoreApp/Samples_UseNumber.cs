@@ -21,13 +21,12 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
 
             Console.WriteLine("Define variables: a:=12.34");
             evaluator.DefineVarDouble("a", 12.34);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -43,13 +42,11 @@ namespace TestExpressionEvalNetCoreApp
             ExprParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            ExprExecResult execResult = evaluator.InitExec(parseResult);
-
             Console.WriteLine("Define variables: a:=123E5");
             evaluator.DefineVarDouble("a", 123E5);
 
             //====3/Execute the expression
-            evaluator.Exec();
+            ExprExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
