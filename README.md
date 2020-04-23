@@ -31,7 +31,13 @@ a=b
 
 (a >= b) and ( c <> d)
 
-a, b, c, d are variables used in expressions.
+(a=12.34)
+
+(count>123E5)
+
+(a="hello")
+
+a, b, c, d,... are variables used in expressions.
 
 After the parse (decode) of the expression, you have to define these variables: define the type and provide a value.
 
@@ -39,11 +45,29 @@ Of course, it's possible to get the list of variables found in the expression.
 
 Possibles types are: bool, int, double and string.
 
+Options:
+
+Change the decimal separator of double, is the dot by default but can be set to semicolon (Excel like).
+
+(a=12,35)
+
+## Roadmap
+
+Some future evolutions are planned in the pipe:
+
+-Add the ability to use function call in expression (soon)
+
+exp: Myfct(),  MyOtherFct(a),  AnotherOneFct(a, 12)
+
+-Add calculation ability 
+
+exp: (a= (b+12))
+
 
 ## TestExpressionEvalNetCoreApp
 This an application example, it's a .NET Core console application
 See the code inside this application to have several examples of use of the ExpressionEval library.
 
-The solution uses now the last published version: 0.2-beta 
+The solution uses now the last published version: 0.3
 
 
