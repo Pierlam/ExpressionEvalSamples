@@ -15,7 +15,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=false");
@@ -36,7 +36,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=true");
@@ -57,7 +57,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=true, B=false");
@@ -79,7 +79,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=true, B=true");
@@ -101,7 +101,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=true, B=false, C=true, D=false");
@@ -128,7 +128,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.SetLang(Language.Fr);
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=false");
@@ -152,7 +152,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.SetLang(Language.Fr);
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=true");

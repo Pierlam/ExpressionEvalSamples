@@ -167,6 +167,17 @@ namespace TestExpressionEvalNetCoreApp
 
         }
 
+        /// <summary>
+        /// use function call in expression
+        /// </summary>
+        static void Exec_Samples_UseFunctionCall()
+        {
+            // a=12.34:  a:=12.34, return true
+            Samples_UseFunctionCallBasic.Fct_OP_CP_true();
+
+            // todo: others samples will coming soon!
+        }
+
         static void ShowInfos_v0_3()
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
@@ -216,6 +227,9 @@ namespace TestExpressionEvalNetCoreApp
 
             // expressions with double number
             Exec_Samples_UseNumber();
+
+            // use function call in expression
+            Exec_Samples_UseFunctionCall();
 
             Console.WriteLine("Input a key..");
             Console.ReadKey();
