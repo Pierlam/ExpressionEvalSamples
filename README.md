@@ -37,6 +37,12 @@ a=b
 
 (a="hello")
 
+fct()
+
+fct(a)
+
+fct(12)
+
 a, b, c, d,... are variables used in expressions.
 
 After the parse (decode) of the expression, you have to define these variables: define the type and provide a value.
@@ -55,9 +61,9 @@ Change the decimal separator of double, is the dot by default but can be set to 
 
 Some future evolutions are planned in the pipe:
 
--Add the ability to use function call in expression (soon)
+-Manage more parameter in function call. (soon)
 
-exp: Myfct(),  MyOtherFct(a),  AnotherOneFct(a, 12)
+exp: Myfct(a,b),  MyOtherFct(a,b,c)
 
 -Add calculation ability 
 
@@ -68,6 +74,6 @@ exp: (a= (b+12))
 This an application example, it's a .NET Core console application
 See the code inside this application to have several examples of use of the ExpressionEval library.
 
-The solution uses now the last published version: 0.3
+The solution uses now the last published version: 0.4
 
 
