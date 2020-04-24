@@ -8,7 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Samples of logical expressions using or/and.
     /// </summary>
-    public class OrAndExpressions
+    public class Samples_OrAndExpressions
     {
         public static void OP_A_Or_b_CP_true()
         {

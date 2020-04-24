@@ -5,11 +5,57 @@ using System.Text;
 
 namespace TestExpressionEvalNetCoreApp
 {
-    public class Not_Expr
+    /// <summary>
+    /// Code samples, comparison expression..
+    /// exp: a=12
+    /// </summary>
+    public class Samples_Operand_Comp_Operand
     {
-        public static void Not_OP_A_CP_true()
+        /// <summary>
+        /// A boolean expression using one variable.
+        /// returns always a boolean value result.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Eq_12_true()
         {
-            string expr = "Not(A)";
+            string expr = "A = 12";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            ExprParseResult parseResult = evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            // scan all variables found in the expression (found the variable named 'a')
+            int i = 0;
+            foreach (ExprVarUsed exprVar in parseResult.ListExprVarUsed)
+            {
+                i++;
+                Console.WriteLine("Var #" + i + "Name=" + exprVar.Name);
+            }
+
+
+            Console.WriteLine("Define variables: a:=12");
+            evaluator.DefineVarInt("a", 12);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+        }
+
+        /// <summary>
+        /// A boolean expression using one variable.
+        /// returns always a boolean value result.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Eq_27_false()
+        {
+            string expr = "A = 27";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
@@ -18,152 +64,145 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=false");
+            Console.WriteLine("Define variables: A=13");
+            evaluator.DefineVarInt("a", 13);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+        }
+
+        /// <summary>
+        /// A boolean expression using one variable.
+        /// returns always a boolean value result.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Diff_14_true()
+        {
+            string expr = "A <> 14";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: A=33");
+            evaluator.DefineVarInt("a", 33);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+        }
+
+        /// <summary>
+        /// A boolean expression using one variable.
+        /// returns always a boolean value result.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Diff_15_false()
+        {
+            string expr = "A <> 15";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: A=15");
+            evaluator.DefineVarInt("a", 15);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+        }
+
+        /// <summary>
+        /// Expression: (A=B)
+        /// A boolean expression using two variables.
+        /// returns always a boolean value result.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Eq_B_true()
+        {
+            string expr = "A = B";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: A=15; B=15 ");
+            evaluator.DefineVarInt("a", 15);
+            evaluator.DefineVarInt("b", 15);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+        }
+
+        /// <summary>
+        /// Expression: (A=B)
+        /// A boolean expression using two variables.
+        /// returns always a boolean value result.
+        /// 
+        /// Particularity:
+        /// Execute the same expression 2 times.
+        /// The first time, both variables A and B are defined as integer.
+        /// The second time, A and B are then defined as boolean.
+        /// 
+        /// The execution finish successfully.
+        /// </summary>
+        public static void A_Eq_B_Exec2Times()
+        {
+            string expr = "A = B";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: A=15; B=15 ");
+            evaluator.DefineVarInt("a", 15);
+            evaluator.DefineVarInt("b", 15);
+
+            //====3/Execute the expression
+            ExprExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result: " + execResult.ResultBool);
+
+            //======================================================
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+
+            Console.WriteLine("\nExecute again the same provided expression but changes variables types and values:");
+            Console.WriteLine("Define variables: A=false; B=false");
             evaluator.DefineVarBool("a", false);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
-        public static void Not_OP_A_CP_false()
-        {
-            string expr = "Not(A)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=true");
-            evaluator.DefineVarBool("a", true);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
-        public static void Not_OP_A_and_b_CP_true()
-        {
-            string expr = "Not(A and B)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=true, B=false");
-            evaluator.DefineVarBool("a", true);
             evaluator.DefineVarBool("b", false);
 
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            //====3/execute l'expression booléenne
+            execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
-
-        public static void Not_OP_A_and_b_CP_false()
-        {
-            string expr = "Not(A and B)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=true, B=true");
-            evaluator.DefineVarBool("a", true);
-            evaluator.DefineVarBool("b", true);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
-        public static void OP_A_or_B_CP_and_not_OP_C_and_D_CP_true()
-        {
-            string expr = "(A or B) and not(C and D)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=true, B=false, C=true, D=false");
-            evaluator.DefineVarBool("a", true);
-            evaluator.DefineVarBool("b", false);
-            evaluator.DefineVarBool("c", true);
-            evaluator.DefineVarBool("d", false);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
-        public static void Non_OP_A_CP_true()
-        {
-            string expr = "Non(A)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            // set the tool in french
-            evaluator.SetLang(Language.Fr);
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=false");
-            evaluator.DefineVarBool("a", false);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
-        public static void Non_OP_A_CP_false()
-        {
-            string expr = "Non(A)";
-            Console.WriteLine("\n====The expression is: " + expr);
-
-            ExpressionEval evaluator = new ExpressionEval();
-
-            // set the tool in french
-            evaluator.SetLang(Language.Fr);
-
-            //====1/decode the expression
-            evaluator.Parse(expr);
-
-            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            Console.WriteLine("Define variables: A=true");
-            evaluator.DefineVarBool("a", true);
-
-            //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
-
-            //====4/get the result, its a bool value
-            Console.WriteLine("Execution Result: " + execResult.ResultBool);
-        }
-
     }
 }

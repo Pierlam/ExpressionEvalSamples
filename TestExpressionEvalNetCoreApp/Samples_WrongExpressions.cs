@@ -8,7 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Wrong expressions, error occurs on the parse stage.
     /// </summary>
-    public class WrongExpressions
+    public class Samples_WrongExpressions
     {
         /// <summary>
         /// A boolean expression using one variable.

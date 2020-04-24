@@ -5,7 +5,13 @@ using System.Text;
 
 namespace TestExpressionEvalNetCoreApp
 {
-    public class Operand_Comp_Operand
+    /// <summary>
+    /// Test the expression :
+    /// (A=B)
+    /// OP  Opening Parenthesis
+    /// CP  Closing
+    /// </summary>
+    public class Samples_OP_Operand_Comp_Operand_CP
     {
         /// <summary>
         /// A boolean expression using one variable.
@@ -15,25 +21,16 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Eq_12_true()
         {
-            string expr = "A = 12";
+            string expr = "(A = 12)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-            // scan all variables found in the expression (found the variable named 'a')
-            int i = 0;
-            foreach (ExprVarUsed exprVar in parseResult.ListExprVarUsed)
-            {
-                i++;
-                Console.WriteLine("Var #" + i + "Name=" + exprVar.Name);
-            }
-
-
-            Console.WriteLine("Define variables: a:=12");
+            Console.WriteLine("Define variables: A=12");
             evaluator.DefineVarInt("a", 12);
 
             //====3/Execute the expression
@@ -51,13 +48,13 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Eq_27_false()
         {
-            string expr = "A = 27";
+            string expr = "(A = 27)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=13");
@@ -78,13 +75,13 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Diff_14_true()
         {
-            string expr = "A <> 14";
+            string expr = "(A <> 14)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=33");
@@ -105,13 +102,13 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Diff_15_false()
         {
-            string expr = "A <> 15";
+            string expr = "(A <> 15)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=15");
@@ -133,13 +130,13 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Eq_B_true()
         {
-            string expr = "A = B";
+            string expr = "(A = B)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=15; B=15 ");
@@ -167,13 +164,13 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         public static void A_Eq_B_Exec2Times()
         {
-            string expr = "A = B";
+            string expr = "(A = B)";
             Console.WriteLine("\n====The expression is: " + expr);
 
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=15; B=15 ");
@@ -188,7 +185,6 @@ namespace TestExpressionEvalNetCoreApp
 
             //======================================================
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
-
             Console.WriteLine("\nExecute again the same provided expression but changes variables types and values:");
             Console.WriteLine("Define variables: A=false; B=false");
             evaluator.DefineVarBool("a", false);
@@ -200,5 +196,6 @@ namespace TestExpressionEvalNetCoreApp
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
+
     }
 }

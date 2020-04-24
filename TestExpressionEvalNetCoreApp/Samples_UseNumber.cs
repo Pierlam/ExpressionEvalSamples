@@ -18,7 +18,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
 
@@ -39,7 +39,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: a:=123E5");
