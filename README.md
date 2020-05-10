@@ -62,18 +62,6 @@ Change the decimal separator of double, is the dot by default but can be set to 
 
 (a=12,35)
 
-## Roadmap
-
-Some future evolutions are planned in the pipe:
-
--Manage more parameter in function call. (soon)
-
-exp: Myfct(a,b),  MyOtherFct(a,b,c)
-
--Add calculation ability 
-
-exp: (a= (b+12))
-
 
 ## TestExpressionEvalNetCoreApp
 This an application example, it's a .NET Core console application
