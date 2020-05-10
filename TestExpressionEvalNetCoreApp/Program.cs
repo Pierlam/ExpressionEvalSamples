@@ -168,7 +168,8 @@ namespace TestExpressionEvalNetCoreApp
         }
 
         /// <summary>
-        /// use function call in expression
+        /// use function call in expression.
+        /// 0, one, two or three parameters.
         /// </summary>
         static void Exec_Samples_UseFunctionCall()
         {
@@ -177,6 +178,23 @@ namespace TestExpressionEvalNetCoreApp
 
             // function call with one int parameter called two times: fct(a)
             Samples_UseFunctionCallBasic.CallFunctionWithIntParam_TwoTimes();
+
+            // call a function having 2 int parameters, returning the sum (an int)
+            Samples_UseFunctionCallBasic.CallFunctionWith2IntParams_ret_5();
+
+            // use a function having 3 parameters
+            Samples_FunctionCall3Params.CallFunctionWith3IntParams_ret_10();        
+        }
+
+        /// <summary>
+        /// Use calculation in expression.
+        /// exp: a+b
+        /// </summary>
+        static void Exec_Samples_Calculation_Basic()
+        {
+            Samples_Calculation_Basic.a_plus_b_ret_9();
+
+            Samples_Calculation_Basic.a_plus_b_mul_c_ret_90();
         }
 
         static void ShowInfos_v0_3()
@@ -197,16 +215,28 @@ namespace TestExpressionEvalNetCoreApp
             Console.WriteLine("--Text the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.4");
             Console.WriteLine("Changes:");
-            Console.WriteLine("  Simplifcation to use the component: InitExec() removed.");
+            Console.WriteLine("  Simplification to use the component: InitExec() removed.");
             Console.WriteLine("  Now possible to use function cal in expression, with any or one parameter.");
             Console.WriteLine("  functionCall: return type: bool, int , string and double managed");
+            Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
+        }
+
+        static void ShowInfos_v0_5()
+        {
+            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("Version is: 0.5");
+            Console.WriteLine("Changes:");
+            Console.WriteLine("  Bug fixed on negative number.");
+            Console.WriteLine("  Function cal can have until 3 parameters.");
+            Console.WriteLine("  New! Calculation expression added in this release: +, -, *, /.");
             Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
         }
 
         static void Main(string[] args)
         {
             //ShowInfos_v0_3();
-            ShowInfos_v0_4();
+            //ShowInfos_v0_4();
+            ShowInfos_v0_5();
 
             Console.WriteLine("\nInput a key to continue..");
             Console.ReadKey();
@@ -234,6 +264,9 @@ namespace TestExpressionEvalNetCoreApp
 
             // use function call in expression
             Exec_Samples_UseFunctionCall();
+
+            // execute calculation expression
+            Exec_Samples_Calculation_Basic();
 
             Console.WriteLine("\nInput a key to ends..");
             Console.ReadKey();
