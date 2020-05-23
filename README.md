@@ -9,10 +9,10 @@ The library on nuget:
 https://www.nuget.org/packages/Pierlam.ExpressionEval/
 
 The web site:
-https://pierlam-project.wixsite.com/website 
+https://pierlamsoftware.com/ 
 
 Contact us:
-Pierlam-Project@outlook.com
+info@pierlamsoftware.com
 
 ## Examples of Expressions
 Expressions are provided as a raw string to the library.
