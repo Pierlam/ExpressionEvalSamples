@@ -5,8 +5,8 @@ namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
     /// Test the library ExpressionEval
-    /// .NET Core.
-    /// Use the netstandard2.0 version.
+    /// It's a .NET Core target application.
+    /// Use the netstandard2.0 version of the Library.
     /// 
     /// Use the version 0.5 of the ExpressionEval library from nuget.
     /// 
