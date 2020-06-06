@@ -8,7 +8,9 @@ namespace TestExpressionEvalNetCoreApp
     /// .NET Core.
     /// Use the netstandard2.0 version.
     /// 
-    /// Use the version 0.4 of the ExpressionEval library from nuget.
+    /// Use the version 0.5 of the ExpressionEval library from nuget.
+    /// 
+    /// https://pierlamsoftware.com
     /// </summary>
     class Program
     {
