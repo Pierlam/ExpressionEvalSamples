@@ -1,4 +1,4 @@
-# ExpressionEvalSamples
+# ExpressionEval .NET Component
 
 ## Description
 This code repository contains a solution with several samples of the ExpressionEval library published on nuget.
