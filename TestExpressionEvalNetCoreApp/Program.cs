@@ -147,6 +147,16 @@ namespace TestExpressionEvalNetCoreApp
         }
 
         /// <summary>
+        /// Samples concerning variables:
+        /// how to scan it...
+        /// </summary>
+        static void Exec_Samples_UseVariables()
+        {
+            // get the variables used in the expression, in the parse stage
+            Samples_UseVariables.GetVariableOfExpression();
+        }
+
+        /// <summary>
         /// use function call in expression.
         /// 0, one, two or three parameters.
         /// </summary>
@@ -258,8 +268,8 @@ namespace TestExpressionEvalNetCoreApp
             // expressions with double number
             Exec_Samples_UseNumber();
 
-            // use function call in expression
-            //Exec_Samples_UseFunctionCall();
+            // variables in expression
+            Exec_Samples_UseVariables();
 
             // use function call in expression
             Exec_Samples_UseFunctionCall();
