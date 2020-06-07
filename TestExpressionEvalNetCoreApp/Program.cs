@@ -21,7 +21,7 @@ namespace TestExpressionEvalNetCoreApp
         /// operande comparison operator operand expression samples
         /// 
         /// </summary>
-        static void Exec_Samples_Operand_Comp_Oprand()
+        static void Exec_Samples_Operand_Comp_Operand()
         {
             // A=12, A:=12 ->return true
             // see how to scan all variables found in the expression
@@ -132,29 +132,6 @@ namespace TestExpressionEvalNetCoreApp
         }
 
         /// <summary>
-        /// wrong expressions structure samples: missing parenthesis,...
-        /// </summary>
-        static void Exec_Samples_WrongExpressions()
-        {
-            TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Eq_12_MissingBracket();
-
-            TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Gt_15_ToManyBracket();
-        }
-
-        /// <summary>
-        /// Expressions with variables well built but variables bad defined (type or/and value).
-        /// </summary>
-        static void Exec_Samples_WrongVariables()
-        {
-            // Not(A): -> error, the variable a should be defined/created
-            Samples_ExprOkVarError.Not_OP_A_CP_Var_a_NotDefined_Err();
-            
-            // Not(A): A:=12-> error, the variable should be a boolean 
-            // -->an exception occurs, need a fix and a new version.
-            Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
-        }
-
-        /// <summary>
         /// expressions with double number
         /// exp: 12.34  123E6
         /// 
@@ -199,6 +176,29 @@ namespace TestExpressionEvalNetCoreApp
             Samples_Calculation_Basic.a_plus_b_mul_c_ret_90();
         }
 
+        /// <summary>
+        /// wrong expressions structure samples: missing parenthesis,...
+        /// </summary>
+        static void Exec_Samples_WrongExpressions()
+        {
+            TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Eq_12_MissingBracket();
+
+            TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Gt_15_ToManyBracket();
+        }
+
+        /// <summary>
+        /// Expressions with variables well built but variables bad defined (type or/and value).
+        /// </summary>
+        static void Exec_Samples_WrongVariables()
+        {
+            // Not(A): -> error, the variable a should be defined/created
+            Samples_ExprOkVarError.Not_OP_A_CP_Var_a_NotDefined_Err();
+
+            // Not(A): A:=12-> error, the variable should be a boolean 
+            // -->an exception occurs, need a fix and a new version.
+            Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
+        }
+
         static void ShowInfos_v0_3()
         {
             Console.WriteLine("--Text the ExpressionEval nuget library:");
@@ -229,7 +229,7 @@ namespace TestExpressionEvalNetCoreApp
             Console.WriteLine("Version is: 0.5");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Bug fixed on negative number.");
-            Console.WriteLine("  Function cal can have until 3 parameters.");
+            Console.WriteLine("  Function call can have until 3 parameters.");
             Console.WriteLine("  New! Calculation expression added in this release: +, -, *, /.");
             Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
         }
@@ -244,7 +244,7 @@ namespace TestExpressionEvalNetCoreApp
             Console.ReadKey();
 
             // operand comparison operator operand expression samples
-            Exec_Samples_Operand_Comp_Oprand();
+            Exec_Samples_Operand_Comp_Operand();
 
             // operand comparison operator operand expression samples, with open and close parenthesis
             Exec_Samples_OP_Operand_Comp_Operand_CP();
@@ -255,20 +255,23 @@ namespace TestExpressionEvalNetCoreApp
             // not logical expression
             Exec_Samples_Not();
 
-            // wrong expressions samples
-            Exec_Samples_WrongExpressions();
-
-            // Expressions with variables well built but variables bad defined (type or/and value).
-            Exec_Samples_WrongVariables();
-
             // expressions with double number
             Exec_Samples_UseNumber();
+
+            // use function call in expression
+            //Exec_Samples_UseFunctionCall();
 
             // use function call in expression
             Exec_Samples_UseFunctionCall();
 
             // execute calculation expression
             Exec_Samples_Calculation_Basic();
+
+            // wrong expressions samples
+            Exec_Samples_WrongExpressions();
+
+            // Expressions with variables well built but variables bad defined (type or/and value).
+            Exec_Samples_WrongVariables();
 
             Console.WriteLine("\nInput a key to ends..");
             Console.ReadKey();
