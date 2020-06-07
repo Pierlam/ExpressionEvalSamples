@@ -7,6 +7,7 @@ namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
     /// Samples of logical expressions using or/and.
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_UseNumber
     {

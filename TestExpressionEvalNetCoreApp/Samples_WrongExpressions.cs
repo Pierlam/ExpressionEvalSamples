@@ -7,6 +7,7 @@ namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
     /// Wrong expressions, error occurs on the parse stage.
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_WrongExpressions
     {

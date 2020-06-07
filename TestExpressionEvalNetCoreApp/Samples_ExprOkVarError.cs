@@ -7,6 +7,7 @@ namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
     /// Expressions with variables well built but variables bad defined (type or/and value).
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_ExprOkVarError
     {

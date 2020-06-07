@@ -10,6 +10,7 @@ namespace TestExpressionEvalNetCoreApp
     /// (A=B)
     /// OP  Opening Parenthesis
     /// CP  Closing
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_OP_Operand_Comp_Operand_CP
     {

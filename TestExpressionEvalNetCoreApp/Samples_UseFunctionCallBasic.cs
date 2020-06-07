@@ -7,6 +7,7 @@ namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
     /// Samples of function call used in expression.
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_UseFunctionCallBasic
     {

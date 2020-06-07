@@ -8,6 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Code samples, expression with the not logical operator.
     /// exp: Not(a)
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_Not_Expr
     {

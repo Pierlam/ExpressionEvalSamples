@@ -8,6 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Samples of calculation expression.
     /// exp: a+b
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_Calculation_Basic
     {

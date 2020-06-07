@@ -8,6 +8,7 @@ namespace TestExpressionEvalNetCoreApp
     /// <summary>
     /// Code samples, comparison expression..
     /// exp: a=12
+    /// https://pierlamsoftware.com
     /// </summary>
     public class Samples_Operand_Comp_Operand
     {
