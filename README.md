@@ -27,6 +27,8 @@ NOT(a)
 
 Not a
 
+Xor(b)
+
 a=b
 
 (a >= b) and ( c <> d)
@@ -68,6 +70,6 @@ Change the decimal separator of double, is the dot by default but can be set to 
 This is an application example, it's a .NET Core console application.
 See the code inside this application to found several examples of use of the ExpressionEval library.
 
-The solution uses now the last published version: 0.5.
+The solution uses now the last published version: 0.6.
 
 
