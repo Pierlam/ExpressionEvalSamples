@@ -124,5 +124,49 @@ namespace TestExpressionEvalNetCoreApp
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
 
+        public static void OP_A_Xor_b_CP_true()
+        {
+            string expr = "(a Xor b)";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: a:=true, b=false");
+            evaluator.DefineVarBool("a", true);
+            evaluator.DefineVarBool("b", false);
+
+            //====3/Execute the expression
+            ExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result (true): " + execResult.ResultBool);
+        }
+
+        public static void OP_A_Xor_b_CP_false()
+        {
+            string expr = "(a Xor b)";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: a:=true, b=true");
+            evaluator.DefineVarBool("a", true);
+            evaluator.DefineVarBool("b", true);
+
+            //====3/Execute the expression
+            ExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result (false): " + execResult.ResultBool);
+        }
+
     }
 }

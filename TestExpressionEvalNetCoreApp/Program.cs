@@ -103,6 +103,13 @@ namespace TestExpressionEvalNetCoreApp
             // set the language to French, so logical operator are: Ou, Et, Non
             // (a Ou b): a:=false, b:=true, return true
             Samples_OrAndExpressions.OP_A_Ou_b_CP_true();
+
+            // (a Xor b): a:=true, b:=false, return true
+            Samples_OrAndExpressions.OP_A_Xor_b_CP_true();
+
+            // (a Xor b): a:=true, b:=true, return false
+            Samples_OrAndExpressions.OP_A_Xor_b_CP_false();
+
         }
 
         /// <summary>
