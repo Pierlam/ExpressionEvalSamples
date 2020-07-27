@@ -48,7 +48,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.AttachFunction("fct", func3ParamsRetIntMapper);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution has error? (should be false): " + execResult.HasError);

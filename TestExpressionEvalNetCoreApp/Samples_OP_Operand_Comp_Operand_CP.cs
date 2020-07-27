@@ -35,7 +35,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("a", 12);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -62,7 +62,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("a", 13);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -89,7 +89,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("a", 33);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -116,7 +116,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("a", 15);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -145,7 +145,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("b", 15);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -179,7 +179,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("b", 15);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);

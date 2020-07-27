@@ -28,7 +28,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("b", 5);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Resultis an int?: " + execResult.IsResultInt);
@@ -52,7 +52,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("c", 10);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Resultis an int?: " + execResult.IsResultInt);

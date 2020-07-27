@@ -27,7 +27,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarDouble("a", 12.34);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -47,7 +47,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarDouble("a", 123E5);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);

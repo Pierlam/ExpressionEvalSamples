@@ -27,7 +27,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("a", false);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -48,7 +48,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("a", true);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -70,7 +70,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("b", false);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -92,7 +92,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("b", true);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -116,7 +116,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("d", false);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -140,7 +140,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("a", false);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -164,7 +164,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarBool("a", true);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);

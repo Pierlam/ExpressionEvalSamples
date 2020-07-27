@@ -244,6 +244,15 @@ namespace TestExpressionEvalNetCoreApp
             Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
         }
 
+        static void ShowInfos_v0_6()
+        {
+            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("Version is: 0.6");
+            Console.WriteLine("Changes:");
+            Console.WriteLine("  Simplication of parse and exec result objects.");
+            Console.WriteLine("  Add XOR logical operator.");
+        }
+
         static void Main(string[] args)
         {
             //ShowInfos_v0_3();

@@ -65,7 +65,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.AttachFunction("fct", FctRetBool);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
@@ -94,7 +94,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.AttachFunction("fct", FctRetBool_Int);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result (should return false): " + execResult.ResultBool);
@@ -132,7 +132,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.AttachFunction("fct", FctRetInt_Int_Int);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result is an int type?: " + execResult.IsResultInt);

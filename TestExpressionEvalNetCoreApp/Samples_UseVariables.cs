@@ -27,7 +27,7 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            ParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             // scan all variables found in the expression (found the variable named 'a')
@@ -43,7 +43,7 @@ namespace TestExpressionEvalNetCoreApp
             evaluator.DefineVarInt("b", 12);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result (should be true): " + execResult.ResultBool);

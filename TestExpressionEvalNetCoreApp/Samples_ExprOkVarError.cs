@@ -19,17 +19,17 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            ParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             if(execResult.HasError)
             {
                 // error: VariableNotCreated
-                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].ErrCode);
+                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].Code);
 
                 // Key: VarName, Value: a
                 Console.WriteLine("Execution Result failed, ParamKey: " + execResult.ListError[0].ListErrorParam[0].Key + ", ParamValue: " + execResult.ListError[0].ListErrorParam[0].Value);
@@ -48,19 +48,19 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            ParseResult parseResult = evaluator.Parse(expr);
 
             //====2/prepare the execution, provide all used variables: type and value, remove the previous result
             Console.WriteLine("Define variables: A=12");
             evaluator.DefineVarInt("a", 12);
 
             //====3/Execute the expression
-            ExprExecResult execResult = evaluator.Exec();
+            ExecResult execResult = evaluator.Exec();
 
             if (execResult.HasError)
             {
                 // error: VariableNotCreated
-                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].ErrCode);
+                Console.WriteLine("Execution Result failed, err: " + execResult.ListError[0].Code);
 
                 // Key: VarName, Value: a
                 Console.WriteLine("Execution Result failed, ParamKey: " + execResult.ListError[0].ListErrorParam[0].Key + ", ParamValue: " + execResult.ListError[0].ListErrorParam[0].Value);

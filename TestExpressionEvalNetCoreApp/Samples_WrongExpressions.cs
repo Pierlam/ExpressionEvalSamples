@@ -25,13 +25,13 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            ParseResult parseResult = evaluator.Parse(expr);
 
             if(parseResult.HasError)
             {
                 Console.WriteLine("The expr '" + expr + "' has errors, nb=" + parseResult.ListError.Count);
-                ExprTokensParseError error = parseResult.ListError[0];
-                Console.WriteLine("Error code: " + error.ErrCode);
+                ParseError error = parseResult.ListError[0];
+                Console.WriteLine("Error code: " + error.Code);
                 Console.WriteLine("Pos in the expr: " + error.Position);
                 Console.WriteLine("Wrong token in the expr: " + error.Token);
                 return;
@@ -55,13 +55,13 @@ namespace TestExpressionEvalNetCoreApp
             ExpressionEval evaluator = new ExpressionEval();
 
             //====1/decode the expression
-            ExprParseResult parseResult = evaluator.Parse(expr);
+            ParseResult parseResult = evaluator.Parse(expr);
 
             if (parseResult.HasError)
             {
                 Console.WriteLine("The expr '" + expr + "' has errors, nb=" + parseResult.ListError.Count);
-                ExprTokensParseError error = parseResult.ListError[0];
-                Console.WriteLine("Error code: " + error.ErrCode);
+                ParseError error = parseResult.ListError[0];
+                Console.WriteLine("Error code: " + error.Code);
                 Console.WriteLine("Pos in the expr: " + error.Position);
                 Console.WriteLine("Wrong token in the expr: " + error.Token);
                 return;
