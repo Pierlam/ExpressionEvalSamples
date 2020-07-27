@@ -88,27 +88,27 @@ namespace TestExpressionEvalNetCoreApp
         static void Exec_Samples_OrAnd_Expressions()
         {
             // (a Or b): a:=false, b:=true, return true
-            Samples_OrAndExpressions.OP_A_Or_b_CP_true();
+            Samples_OrAndXorExpressions.OP_A_Or_b_CP_true();
 
             // (a Or b): a:=false, b:=false, return false
-            Samples_OrAndExpressions.OP_A_Or_b_CP_false();
+            Samples_OrAndXorExpressions.OP_A_Or_b_CP_false();
 
             // (a And b): a:=true, b:=true, return true
-            Samples_OrAndExpressions.OP_A_And_b_CP_true();
+            Samples_OrAndXorExpressions.OP_A_And_b_CP_true();
 
             // (a And b): a:=false, b:=true, return false
-            Samples_OrAndExpressions.OP_A_And_b_CP_false();
+            Samples_OrAndXorExpressions.OP_A_And_b_CP_false();
 
 
             // set the language to French, so logical operator are: Ou, Et, Non
             // (a Ou b): a:=false, b:=true, return true
-            Samples_OrAndExpressions.OP_A_Ou_b_CP_true();
+            Samples_OrAndXorExpressions.OP_A_Ou_b_CP_true();
 
             // (a Xor b): a:=true, b:=false, return true
-            Samples_OrAndExpressions.OP_A_Xor_b_CP_true();
+            Samples_OrAndXorExpressions.OP_A_Xor_b_CP_true();
 
             // (a Xor b): a:=true, b:=true, return false
-            Samples_OrAndExpressions.OP_A_Xor_b_CP_false();
+            Samples_OrAndXorExpressions.OP_A_Xor_b_CP_false();
 
         }
 

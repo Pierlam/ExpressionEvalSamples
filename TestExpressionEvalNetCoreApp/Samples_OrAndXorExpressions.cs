@@ -6,10 +6,10 @@ using System.Text;
 namespace TestExpressionEvalNetCoreApp
 {
     /// <summary>
-    /// Samples of logical expressions using or/and.
+    /// Samples of logical expressions using or/and and Xor.
     /// https://pierlamsoftware.com
     /// </summary>
-    public class Samples_OrAndExpressions
+    public class Samples_OrAndXorExpressions
     {
         public static void OP_A_Or_b_CP_true()
         {
