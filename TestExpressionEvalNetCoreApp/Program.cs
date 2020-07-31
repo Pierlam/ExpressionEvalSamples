@@ -218,9 +218,19 @@ namespace TestExpressionEvalNetCoreApp
             Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
         }
 
+        /// <summary>
+        /// Check the license
+        ///
+        /// </summary>
+        static void Exec_Samples_License()
+        {
+            Samples_License.CheckDefaultTrialLicense();
+            Samples_License.SetCommercialLicence_IsNOTValid_OutOfDate();
+        }
+
         static void ShowInfos_v0_3()
         {
-            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("--Test the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.3");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Bugs fixes on expressions using NOT logical operator.");
@@ -233,7 +243,7 @@ namespace TestExpressionEvalNetCoreApp
 
         static void ShowInfos_v0_4()
         {
-            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("--Test the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.4");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Simplification to use the component: InitExec() removed.");
@@ -244,7 +254,7 @@ namespace TestExpressionEvalNetCoreApp
 
         static void ShowInfos_v0_5()
         {
-            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("--Test the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.5");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Bug fixed on negative number.");
@@ -255,11 +265,12 @@ namespace TestExpressionEvalNetCoreApp
 
         static void ShowInfos_v0_6()
         {
-            Console.WriteLine("--Text the ExpressionEval nuget library:");
+            Console.WriteLine("--Test the ExpressionEval nuget library:");
             Console.WriteLine("Version is: 0.6");
             Console.WriteLine("Changes:");
             Console.WriteLine("  Simplication of parse and exec result objects.");
             Console.WriteLine("  Add XOR logical operator.");
+            Console.WriteLine("  Subject to License (trial by default).");
         }
 
         static void Main(string[] args)
@@ -301,6 +312,9 @@ namespace TestExpressionEvalNetCoreApp
 
             // Expressions with variables well built but variables bad defined (type or/and value).
             Exec_Samples_WrongVariables();
+
+            // check the license
+            Exec_Samples_License();
 
             Console.WriteLine("\nInput a key to ends..");
             Console.ReadKey();
