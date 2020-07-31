@@ -198,6 +198,8 @@ namespace TestExpressionEvalNetCoreApp
         /// </summary>
         static void Exec_Samples_WrongExpressions()
         {
+            TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Eq_B_TypeMismatch();
+
             TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Eq_12_MissingBracket();
 
             TestExpressionEvalNetCoreApp.Samples_WrongExpressions.A_Gt_15_ToManyBracket();
@@ -264,7 +266,8 @@ namespace TestExpressionEvalNetCoreApp
         {
             //ShowInfos_v0_3();
             //ShowInfos_v0_4();
-            ShowInfos_v0_5();
+            //ShowInfos_v0_5();
+            ShowInfos_v0_6();
 
             Console.WriteLine("\nInput a key to continue..");
             Console.ReadKey();

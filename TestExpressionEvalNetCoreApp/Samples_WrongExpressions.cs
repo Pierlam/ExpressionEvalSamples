@@ -12,6 +12,51 @@ namespace TestExpressionEvalNetCoreApp
     public class Samples_WrongExpressions
     {
         /// <summary>
+        /// error, the variables types mismatch.
+        /// Can't compare an integer and a boolean.
+        /// 
+        /// ====The expression is: (a=b)
+        /// The expr '(a=b)' has errors, nb = 1
+        /// Error code: ExprComparisonOperandsTypeMismatchIntExpected
+        /// Error param: Position= 3
+        ///
+        /// </summary>
+        public static void A_Eq_B_TypeMismatch()
+        {
+            string expr = "(a=b)";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            // 1-decode the expression
+            evaluator.Parse(expr);
+
+            // 2-set variables
+            evaluator.DefineVarInt("a", 12);
+            evaluator.DefineVarBool("b", true);
+
+            // 3-execute the expression
+            ExecResult execResult= evaluator.Exec();
+
+            // 4-check error
+            if (execResult.HasError)
+            {
+                // display the error code
+                Console.WriteLine("The expr '" + expr + "' has errors, nb=" + execResult.ListError.Count);
+                ExecError error = execResult.ListError[0];
+                Console.WriteLine("Error code: " + error.Code);
+
+                // display the error parameter (the position of the wrong token)
+                Console.WriteLine("Error param: " + error.ListErrorParam[0].Key+ "= " + error.ListErrorParam[0].Value);
+
+                return;
+            }
+
+            Console.WriteLine("The expr " + expr + " parse finished sucessfully!");
+
+        }
+
+        /// <summary>
         /// A boolean expression using one variable.
         /// returns always a boolean value result.
         /// 
