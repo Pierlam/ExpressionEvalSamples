@@ -51,7 +51,7 @@ fct(a,b)
 
 (a+b)*c)
 
-a+b*c   Will apply operator priority: first *,/ then +,-
+a+b*c  -> Will apply operator priority: first *,/ then +,-
 
 a, b, c, d,... are variables used in expressions.
 
