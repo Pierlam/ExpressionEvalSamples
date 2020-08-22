@@ -10,6 +10,9 @@ namespace TestExpressionEvalNetCoreApp
     /// </summary>
     public class Samples_License
     {
+        /// <summary>
+        /// Check the default license provided with the component.
+        /// </summary>
         public static void CheckDefaultTrialLicense()
         {
             Console.WriteLine("\n====Check the default trial license: " );

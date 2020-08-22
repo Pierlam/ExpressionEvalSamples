@@ -225,7 +225,7 @@ namespace TestExpressionEvalNetCoreApp
         }
 
         /// <summary>
-        /// Check the license
+        /// Check the license.
         ///
         /// </summary>
         static void Exec_Samples_License()
