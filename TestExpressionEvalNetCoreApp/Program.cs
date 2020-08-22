@@ -191,6 +191,9 @@ namespace TestExpressionEvalNetCoreApp
             Samples_Calculation_Basic.a_plus_b_ret_9();
 
             Samples_Calculation_Basic.a_plus_b_mul_c_ret_90();
+
+            // a+b*c -> a+(b*c)
+            Samples_Calculation_Basic.a_plus_b_mul_c_ret_14();
         }
 
         /// <summary>
@@ -216,6 +219,9 @@ namespace TestExpressionEvalNetCoreApp
             // Not(A): A:=12-> error, the variable should be a boolean 
             // -->an exception occurs, need a fix and a new version.
             Samples_ExprOkVarError.Not_OP_A_CP_A_Int_Err();
+
+            // define a wrong variable name, get the error
+            Samples_ExprOkVarError.DefineVarSyntaxName();
         }
 
         /// <summary>
@@ -228,57 +234,15 @@ namespace TestExpressionEvalNetCoreApp
             Samples_License.SetCommercialLicence_IsNOTValid_OutOfDate();
         }
 
-        static void ShowInfos_v0_3()
-        {
-            Console.WriteLine("--Test the ExpressionEval nuget library:");
-            Console.WriteLine("Version is: 0.3");
-            Console.WriteLine("Changes:");
-            Console.WriteLine("  Bugs fixes on expressions using NOT logical operator.");
-            Console.WriteLine("  ExpressionEval.DefineVariableBool() replaced by ExpressionEval.DefineVarBool()");
-            Console.WriteLine("  ExpressionEval.DefineVariableInt() replaced by ExpressionEval.DefineVarInt()");
-            Console.WriteLine("  ExpressionEval.DefineVariableString() replaced by ExpressionEval.DefineVarString()");
-            Console.WriteLine("  ExpressionEval.DefineVariableDouble() replaced by ExpressionEval.DefineVarDouble()");
-            Console.WriteLine("  Get the bool result of an execution, is now simplier, just use: ExprExecResult.ResultBool, its a boolean value.");
-        }
-
-        static void ShowInfos_v0_4()
-        {
-            Console.WriteLine("--Test the ExpressionEval nuget library:");
-            Console.WriteLine("Version is: 0.4");
-            Console.WriteLine("Changes:");
-            Console.WriteLine("  Simplification to use the component: InitExec() removed.");
-            Console.WriteLine("  Now possible to use function cal in expression, with any or one parameter.");
-            Console.WriteLine("  functionCall: return type: bool, int , string and double managed");
-            Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
-        }
-
-        static void ShowInfos_v0_5()
-        {
-            Console.WriteLine("--Test the ExpressionEval nuget library:");
-            Console.WriteLine("Version is: 0.5");
-            Console.WriteLine("Changes:");
-            Console.WriteLine("  Bug fixed on negative number.");
-            Console.WriteLine("  Function call can have until 3 parameters.");
-            Console.WriteLine("  New! Calculation expression added in this release: +, -, *, /.");
-            Console.WriteLine("  functionCall: parameter type: bool, int , string and double managed");
-        }
-
-        static void ShowInfos_v0_6()
-        {
-            Console.WriteLine("--Test the ExpressionEval nuget library:");
-            Console.WriteLine("Version is: 0.6");
-            Console.WriteLine("Changes:");
-            Console.WriteLine("  Simplication of parse and exec result objects.");
-            Console.WriteLine("  Add XOR logical operator.");
-            Console.WriteLine("  Subject to License (trial by default).");
-        }
 
         static void Main(string[] args)
         {
-            //ShowInfos_v0_3();
-            //ShowInfos_v0_4();
-            //ShowInfos_v0_5();
-            ShowInfos_v0_6();
+            VersionInfos versionInfos = new VersionInfos();
+            //versionInfos.ShowInfos_v0_3();
+            //versionInfos.ShowInfos_v0_4();
+            //versionInfos.ShowInfos_v0_5();
+            //versionInfos.ShowInfos_v0_6();
+            versionInfos.ShowInfos_v0_7();
 
             Console.WriteLine("\nInput a key to continue..");
             Console.ReadKey();

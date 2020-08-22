@@ -43,7 +43,7 @@ namespace TestExpressionEvalNetCoreApp
             {
                 // display the error code
                 Console.WriteLine("The expr '" + expr + "' has errors, nb=" + execResult.ListError.Count);
-                ExecError error = execResult.ListError[0];
+                ExprError error = execResult.ListError[0];
                 Console.WriteLine("Error code: " + error.Code);
 
                 // display the error parameter (the position of the wrong token)
@@ -75,10 +75,10 @@ namespace TestExpressionEvalNetCoreApp
             if(parseResult.HasError)
             {
                 Console.WriteLine("The expr '" + expr + "' has errors, nb=" + parseResult.ListError.Count);
-                ParseError error = parseResult.ListError[0];
+                ExprError error = parseResult.ListError[0];
                 Console.WriteLine("Error code: " + error.Code);
-                Console.WriteLine("Pos in the expr: " + error.Position);
-                Console.WriteLine("Wrong token in the expr: " + error.Token);
+                Console.WriteLine("Pos in the expr: " + error.TokenPosition);
+                Console.WriteLine("Wrong token in the expr: " + error.TokenValue);
                 return;
             }
 
@@ -105,10 +105,10 @@ namespace TestExpressionEvalNetCoreApp
             if (parseResult.HasError)
             {
                 Console.WriteLine("The expr '" + expr + "' has errors, nb=" + parseResult.ListError.Count);
-                ParseError error = parseResult.ListError[0];
+                ExprError error = parseResult.ListError[0];
                 Console.WriteLine("Error code: " + error.Code);
-                Console.WriteLine("Pos in the expr: " + error.Position);
-                Console.WriteLine("Wrong token in the expr: " + error.Token);
+                Console.WriteLine("Pos in the expr: " + error.TokenPosition);
+                Console.WriteLine("Wrong token in the expr: " + error.TokenValue);
                 return;
             }
 

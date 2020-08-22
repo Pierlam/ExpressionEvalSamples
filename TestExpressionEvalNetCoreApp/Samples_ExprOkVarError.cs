@@ -70,5 +70,35 @@ namespace TestExpressionEvalNetCoreApp
             //====4/get the result, its a bool value
             Console.WriteLine("Execution Result: " + execResult.ResultBool);
         }
+
+        /// <summary>
+        /// Define a variable but the syntax name is wrong: has space.
+        /// </summary>
+        public static void DefineVarSyntaxName()
+        {
+            string expr = "Not(A)";
+            Console.WriteLine("\n====The expression is: " + expr);
+
+            ExpressionEval evaluator = new ExpressionEval();
+
+            //====1/decode the expression
+            ParseResult parseResult = evaluator.Parse(expr);
+
+            //====2/prepare the execution, provide all used variables: type and value, remove the previous result
+            Console.WriteLine("Define variables: A=12");
+            evaluator.DefineVarBool("a", false);
+            Console.WriteLine("Define wrong variable name: 'a b c'  -> don't stop the execution of the evaluation of the expression!");
+            evaluator.DefineVarInt("a b c", 12);
+
+            List<ExprError> listConfigError= evaluator.GetListErrorExprConfig();
+            Console.WriteLine("DefineVar failed, err (VarNameSyntaxWrong): " + listConfigError[0].Code);
+
+            //====3/Execute the expression
+            ExecResult execResult = evaluator.Exec();
+
+            //====4/get the result, its a bool value
+            Console.WriteLine("Execution Result (true): " + execResult.ResultBool);
+        }
+
     }
 }
