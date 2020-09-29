@@ -224,16 +224,6 @@ namespace TestExpressionEvalNetCoreApp
             Samples_ExprOkVarError.DefineVarSyntaxName();
         }
 
-        /// <summary>
-        /// Check the license.
-        ///
-        /// </summary>
-        static void Exec_Samples_License()
-        {
-            Samples_License.CheckDefaultTrialLicense();
-            Samples_License.SetCommercialLicence_IsNOTValid_OutOfDate();
-        }
-
 
         static void Main(string[] args)
         {
@@ -242,7 +232,8 @@ namespace TestExpressionEvalNetCoreApp
             //versionInfos.ShowInfos_v0_4();
             //versionInfos.ShowInfos_v0_5();
             //versionInfos.ShowInfos_v0_6();
-            versionInfos.ShowInfos_v0_7();
+            //versionInfos.ShowInfos_v0_7();
+            versionInfos.ShowInfos_v0_8_1();
 
             Console.WriteLine("\nInput a key to continue..");
             Console.ReadKey();
@@ -276,9 +267,6 @@ namespace TestExpressionEvalNetCoreApp
 
             // Expressions with variables well built but variables bad defined (type or/and value).
             Exec_Samples_WrongVariables();
-
-            // check the license
-            Exec_Samples_License();
 
             Console.WriteLine("\nInput a key to ends..");
             Console.ReadKey();

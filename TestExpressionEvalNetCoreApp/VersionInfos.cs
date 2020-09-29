@@ -9,6 +9,14 @@ namespace TestExpressionEvalNetCoreApp
     /// </summary>
     public class VersionInfos
     {
+        public void ShowInfos_v0_8_1()
+        {
+            Console.WriteLine("--Test the ExpressionEval nuget library:");
+            Console.WriteLine("Version is: 0.8.1");
+            Console.WriteLine("Changes:");
+            Console.WriteLine("  -Now open-source and free of charge with full funcionnalities.");
+        }
+
         public void ShowInfos_v0_7()
         {
             Console.WriteLine("--Test the ExpressionEval nuget library:");
