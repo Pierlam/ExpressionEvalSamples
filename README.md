@@ -3,18 +3,56 @@
 ## Description
 This code repository contains a solution with several samples of the ExpressionEval library published on nuget.
 
-ExpressionEval is an Expression Evaluator back-office component. Expression are provided as raw string. It enables you to evaluate easily: logical (Or, And and Not), comparison (=, <>, <=, <, >, >=) or calculation (+, -, *, /) in an application. Possible to use variable and function call. The component is configurable: double decimal separator, string tag,... This component is a library provided in .NET Standard 2.0 and in .NET Framework 4.5.
+**ExpressionEval** is an expression evaluation component designed for backend applications.
 
-The library on nuget:
-https://www.nuget.org/packages/Pierlam.ExpressionEval/
+Expressions are provided as raw strings and can be easily evaluated. The component supports:
+
+- **Logical operators:** `Or`, `And`, `Not`
+- **Comparison operators:** `=`, `<>`, `<=`, `<`, `>`, `>=`
+- **Arithmetic operators:** `+`, `-`, `*`, `/`
+- **Variables and function calls**
+
+The component is configurable, with options such as the decimal separator, string delimiters, and more.
+
+ExpressionEval is available as a .NET library targeting **.NET 8 and .NET 10**.
+
+The component is free and open-source.
+
+The source code: https://github.com/Pierlam/ExpressionEval
+
+The library on nuget: https://www.nuget.org/packages/Pierlam.ExpressionEval/
 
 The web site:
 https://github.com/Pierlam/ExpressionEval 
 
-Contact us:
-pierlam-project@outlook.com
+# How to use it
 
-## Examples of Expressions
+Here is a basic sample of how to use this component.
+
+```
+//-Init the evaluator engine
+ExpressionEval evaluator = new ExpressionEval();
+
+//-The expression to parse and execute, defined as a raw string
+string expr = "Not(A)";
+
+//-Parse the expression, decode it
+evaluator.Parse(expr);
+
+//-prepare the execution, provide all defined variables: type and value, remove the previous result, a= false
+evaluator.DefineVarBool("a", false);
+
+//-Execute the expression, apply values onf each variables, then produce a result
+ExecResult execResult = evaluator.Exec();
+
+//-Get the result, its a bool value
+Console.WriteLine("Execution Result: " + execResult.ResultBool);  
+  -> Execution Result: true
+```
+
+
+# Examples of Expressions
+
 Expressions are provided as a raw string to the library.
 
 Some examples of expressions you can execute:
@@ -51,7 +89,7 @@ fct(a,b)
 
 (a+b)*c)
 
-a+b*c  -> Will apply operator priority: first *,/ then +,-
+a+b*c -> Will apply operator priority: first *,/ then +,-
 
 a, b, c, d,... are variables used in expressions.
 
@@ -68,10 +106,22 @@ Change the decimal separator of double, is the dot by default but can be set to 
 (a=12,35)
 
 
-## TestExpressionEvalNetCoreApp
-This is an application example, it's a .NET Core console application.
-See the code inside this application to found several examples of use of the ExpressionEval library.
+# Source code, documentation and nuget
 
-The solution uses now the last published version: 0.8.1
+ExpressionEval library is packaged as a nuget ready to use:
+
+https://www.nuget.org/packages/Pierlam.ExpressionEval/
 
 
+Github source repository:
+
+https://github.com/Pierlam/ExpressionEval
+
+
+## Contact 
+
+Have any comments or questions? Would you like to request a new feature?
+
+Feel free to send an email at:
+
+pierlam-project@outlook.com
